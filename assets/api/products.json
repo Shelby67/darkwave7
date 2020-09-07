@@ -1,0 +1,52 @@
+[
+    {
+        "productId": 1,
+        "productName": "Mitsubishi Lancer GLXI",
+        "productCode": "GDN-098",
+        "releaseDate": "October 09, 1999",
+        "description": "1.5 Liter, 4G15, 5 speed Manual",
+        "price": 233.33,
+        "rating": 3.3,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQShi99LALyhKCrfKkZGtn2EtiLt5yfDSGdNm7v-45lz_P83xtJ&usqp=CAU"
+    },
+    {
+        "productId": 2,
+        "productName": "Ford Mustang GT-500",
+        "productCode": "GDN-062",
+        "releaseDate": "September 12, 1967",
+        "description": "7.0 Liter, 4 speed Manual, 335 hp @ 3200 RPM",
+        "price": 923.12,
+        "rating": 3.7,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSUEaspWsb1NDw2L61-SZZXaLANYqJtVdIYbYeBJwoY3uzcU9nK&usqp=CAU"
+    },
+    {
+        "productId": 3,
+        "productName": "Mitsubishi Galant",
+        "productCode": "GDN-063",
+        "releaseDate": "April 24, 1997",
+        "description": "2.0 Liter, 4G63, 4 speed Automatic",
+        "price": 521.16,
+        "rating": 4.8,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRUwUaD-HNhSuejg8WOaykZiZ3etZZimZsxH8F-eQ2vnuu3yVB&usqp=CAU"
+    },
+    {
+        "productId": 4,
+        "productName": "Daewoo Racer Sti",
+        "productCode": "GDN-064",
+        "releaseDate": "January 16, 1993",
+        "description": "1.5 Liter, SOHC, 5 speed Manual",
+        "price": 135.11,
+        "rating": 3.9,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9alOEhpWQWUMR48p2q4sw02J5UBI6qGnVuDigALRfKl3pcfHu&usqp=CAU"
+    },
+    {
+        "productId": 5,
+        "productName": "Mercedes Benz 280 SE",
+        "productCode": "GDN-067",
+        "releaseDate": "March 22, 1983",
+        "description": "2.8 Liter, 4 speed Automatic",
+        "price": 667.19,
+        "rating": 4.1,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQVnvrfMV6ZGqWCOsxQcFNZlVMpNal-KUwc30QpvdHwAIpI0HX2&usqp=CAU"
+    }
+]
