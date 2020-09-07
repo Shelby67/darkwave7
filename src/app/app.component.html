@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand bg-dark navbar-light">
+  
+  <ul class="nav nav-pills">
+     <li><a class="nav-link" routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>
+     <li><a class="nav-link" routerLinkActive='active' [routerLink]="['/products']">Collection</a></li>
+  </ul>
+  <a class="navbar-brand">{{pageTitle}}</a>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

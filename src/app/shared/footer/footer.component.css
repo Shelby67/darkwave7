@@ -1,0 +1,16 @@
+footer{
+    height: 8em;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(51, 219, 36);
+    font-weight: 500;
+
+}
+@media only screen  and (max-width: 812px) and (min-width: 300px) {    
+    footer{
+        font-size: smaller!important;
+    }
+}

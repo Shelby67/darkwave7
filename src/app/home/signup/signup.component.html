@@ -1,0 +1,44 @@
+<h5 class="card-title">Sign-up Form</h5>
+<form [formGroup]="loginForm">
+    <div class="form-group">
+        <label>What's your first name?</label>
+        <input type="text" placeholder="" class="form-control" formControlName="firstName" maxlength="20" [class.is-valid] = "loginForm.get('firstName').valid" [class.is-invalid] = "loginForm.get('firstName').invalid && loginForm.get('firstName').touched">
+        <div *ngIf="(firstName.invalid && firstName.touched) || firstName.dirty">
+            <small class='error' *ngIf="firstName.errors?.required">*First name is required</small>
+            <small class='error' *ngIf="firstName.errors?.minlength">*Please provide a valid first name</small>
+            <small class='error' *ngIf="firstName.errors?.pattern">*Name cannot contain special characters or numbers</small>
+        </div>
+        <label>What's your last name?</label>
+        <input type="text" placeholder="" class="form-control" formControlName="lastName" maxlength="20"
+            [class.is-valid]="loginForm.get('lastName').valid"
+            [class.is-invalid]="loginForm.get('lastName').invalid && loginForm.get('lastName').touched">
+        <div *ngIf="(lastName.invalid && lastName.touched) || lastName.dirty">
+            <small class='error' *ngIf="lastName.errors?.required">*Last name is required</small>
+            <small class='error' *ngIf="lastName.errors?.minlength">*Please provide a valid last name</small>
+            <small class='error' *ngIf="lastName.errors?.pattern">*Name cannot contain special characters or numbers</small>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label >Why are you here?</label> 
+        <textarea placeholder="**Give an appropriate reason**" formControlName="bio" class="form-control" rows="3" maxlength="100"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Enter your Email ID</label>
+        <input type="email" placeholder="Ex: yourid@mail.com" formControlName="email" class="form-control"  required [class.is-valid] = "loginForm.get('email').valid" [class.is-invalid]="loginForm.get('email').invalid && loginForm.get('email').touched" uniqueEmail>
+        <div class='error' *ngIf="email.invalid && (email.touched ||email.dirty)">
+            <small class='error' *ngIf="email.errors?.required">*Email is required</small>
+            <small class='error' *ngIf="email.errors?.pattern">*Please provide a valid email</small>
+            <small class="error" *ngIf="email.errors.uniqueEmail">Email already exists</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Choose a Password</label>
+        <input placeholder="" type="password" formControlName="password" class="form-control" [class.is-valid] = "loginForm.get('password').valid"  [class.is-invalid] = "loginForm.get('password').invalid && loginForm.get('password').touched">
+        <div class='error' *ngIf="(password.invalid && password.touched) ||password.dirty">
+            <small class='error' *ngIf="password.errors?.required">*Password is required</small>
+            <small class='error' *ngIf="password.errors?.pattern">*Weak Password</small>
+        </div>
+    </div>
+    <button type="submit" (click)='sendData(loginForm.value)' class="btn btn-outline-success">Register</button>  
+</form>

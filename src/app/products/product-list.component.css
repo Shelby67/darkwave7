@@ -1,0 +1,26 @@
+.imageHolder{
+    position: relative;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: 700;
+}
+.desc{
+    position: absolute;
+    bottom: 11px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2px;
+    width: 120px;
+    margin: 2px;
+    text-align: center;
+}
+th button{
+    width: 100%;
+}
+.th{
+    min-width: 120px;
+    width: 120px
+}
+.card-header{
+    font-weight: 500;
+}

@@ -1,0 +1,44 @@
+<h5 class="card-title">Login Form</h5>
+<form [formGroup]="loginForm">
+    <div class="form-group">
+        <label>What's your first name?</label>
+        <input type="text" placeholder="" class="form-control" formControlName="firstName" maxlength="20"
+            [class.is-valid]="loginForm.get('firstName').valid"
+            [class.is-invalid]="loginForm.get('firstName').invalid && loginForm.get('firstName').touched">
+        <div *ngIf="(firstName.invalid && firstName.touched) || firstName.dirty">
+            <small class='error' *ngIf="firstName.errors?.required">*First name required</small>
+            <small class='error' *ngIf="firstName.errors?.minlength">*Please provide a valid last name</small>
+        </div>
+        <label>What's your last name?</label>
+        <input type="text" placeholder="" class="form-control" formControlName="lastName" maxlength="20"
+            [class.is-valid]="loginForm.get('lastName').valid"
+            [class.is-invalid]="loginForm.get('lastName').invalid && loginForm.get('lastName').touched">
+        <div *ngIf="(lastName.invalid && lastName.touched) || lastName.dirty">
+            <small class='error' *ngIf="lastName.errors?.required">*Last name required</small>
+            <small class='error' *ngIf="lastName.errors?.minlength">*Please provide a valid last name</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Do you have any concerns?</label> 
+        <textarea placeholder="**Do not hesitate to express**" formControlName="bio" class="form-control" rows="3" maxlength="100"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Enter your registered email ID</label>
+        <input type="email" placeholder="" formControlName="email" class="form-control" [class.is-valid] = "loginForm.get('email').valid"  [class.is-invalid] = "loginForm.get('email').invalid && loginForm.get('email').touched" required uniqueEmail>
+        <div class='error' *ngIf="email.invalid && (email.touched ||email.dirty)">
+            <small class='error' *ngIf="email.errors?.required">*Email required</small>
+            <small class='error' *ngIf="email.errors?.pattern">*Please provide a valid email</small>
+            <small class="error" *ngIf="email.errors?.uniqueEmail">. Email not registered {{email.errors|json}}</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input placeholder="" type="password" formControlName="password" class="form-control" [class.is-valid] = "loginForm.get('password').valid"  [class.is-invalid] = "loginForm.get('password').invalid && loginForm.get('password').touched">
+        <div class='error' *ngIf="(password.invalid && password.touched) ||password.dirty">
+            <small class='error' *ngIf="password.errors?.required">*Password required</small>
+            <small class='error' *ngIf="password.errors?.pattern">*Weak Password</small>
+        </div>    
+    </div>
+    <button type="submit" class="btn btn-outline-success">Ding Dong</button>
+    <div>{{loginForm|json}}</div>
+</form>

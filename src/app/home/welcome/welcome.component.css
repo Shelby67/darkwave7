@@ -1,0 +1,65 @@
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin: 0!important;
+}
+
+.btn{
+    width: 9em!important;
+}
+#contact{
+    margin-left: auto!important;
+}
+#menu, #contact{
+    width: 49%;
+}
+@media only screen and (min-width: 900px) {
+    #menu{
+        min-width: 21em;
+    }
+}
+*{
+    width: 100%;
+    min-width: 30%;
+}
+.left-vid, .right-vid{
+    text-align: center;
+    margin-right: 0.5%;
+    width: 49%;
+}
+iframe{
+        width:100!important;
+}
+@media only screen  and (max-width: 812px) and (min-width: 300px) {
+    .left-vid, .right-vid{
+        min-width: 100%;
+        width: 100%;
+        text-align: center;
+        margin-right: 10px;
+    }
+    #menu, #contact{
+        width: 100%;
+        min-width: 90%;
+        margin-bottom: 20px;
+    }
+    .idd{
+        min-width: 100%;
+    }
+    iframe{
+        width:100!important;
+    }
+
+}
+.card-body{
+    display: inline-block;
+}
+.idd{
+    display: flex;
+    max-width: 50%;
+    margin-top: 8px;
+    margin-right:  auto;
+}
+
+.left-vid, .right-vid{
+    display: inline-block;
+}

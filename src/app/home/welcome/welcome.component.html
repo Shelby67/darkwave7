@@ -1,0 +1,42 @@
+<div class="row" >
+    <div class="card bg-dark text-info border-info mb-3" >
+    <div class="card-body">
+        <div class="left-vid">
+            <video controls>
+                <source src="../../../assets/img/videoplayback.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+                <source src="../../../assets/img/videoplayback.webm" type='video/webm;codecs="avc1.42E01E, mp4a.40.2"' />
+            </video>
+        </div>
+        <div class="right-vid">
+
+        </div>
+        <div class="idd">
+            <input ngModel type="text" placeholder="YouTube ID" [(ngModel)]='inputtKey' style='text-align: center;'>
+            <button (click)='insertVideoYT();'class='btn btn-primary'>
+                Insert
+            </button >
+            <button id='insertV' (click)='insertVideoL();' class='btn btn-warning'>
+                Inject via L
+            </button>
+        </div>        
+    </div>
+    <blockquote class="blockquote text-right">
+    </blockquote>        
+</div>
+<div id="menu" class="card border-warning bg-dark" >
+    <div class="card-body text-success d-flex flex-column align-items-center justify-content-center">
+        <button class="btn btn-outline-warning test-warning m-2" (click)="toggleEditor('signup')">Test Arena</button>
+        <button class="btn btn-outline-warning test-warning m-2">Admin</button>
+        <button class="btn m-2 btn-outline-warning test-warning" (click)="toggleEditor('login')">Login</button>
+    </div>
+</div>
+    <div class="card border-success" id="contact">
+        <div class="card-body text-success bg-dark border-success pt-3 pb-5">
+            <div>
+                <app-signup *ngIf="showSignupEditor"></app-signup>
+                <app-login *ngIf="showLoginEditor"></app-login>
+            </div>
+        </div>
+    </div>
+</div>
+

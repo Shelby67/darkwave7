@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2" >Filter by:</div>
+            <div class="col-4">
+                <input id="searchbar" placeholder=" Type to search . . ."
+                       onfocus="this.placeholder = ''"
+                       onblur="this.placeholder = ' Type to search . . .'"
+                       type="text" [(ngModel)]="listFilter"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4>Filtered by: {{ listFilter }}</h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="products && products.length">
+                <thead>
+                    <tr>
+                        <th class="th">
+                            <button (click)="toggleImage()" class="btn btn-primary">{{showImg ? 'Hide':'Show'}} Image</button>
+                        </th>
+                        <th>Description</th>
+                        <th>Code</th>
+                        <th>Manufactured</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of filterProducts">
+                        <td class="imageHolder" ><a [routerLink]="['/product',product.productId]">
+                            <img 
+                              [src]="product.imageUrl" 
+                              [title]="product.productName"                              
+                              [style.margin.px]="imgMargin"
+                              [style.width.px]="imgWidth"
+                              *ngIf="showImg"
+                            />
+                            <div class="desc">
+                                {{product.productName}}
+                            </div></a>
+                        </td>
+                        <td>{{product.description }}</td>
+                        <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price | currency: 'USD': 'symbol': '1.2-2'}}</td>
+                        <td><star-rating [rating]='product.rating'(starClicked)='startRatingClicked($event)'></star-rating></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

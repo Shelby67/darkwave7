@@ -1,0 +1,47 @@
+
+.container{    
+    background: rgb(33,37,41);
+    background: linear-gradient(0deg, rgba(33,37,41,1) 48%, rgba(0,0,0,1) 100%);
+    margin: 0px;
+    padding: 0px 113px;
+    min-width: 100%!important;
+}
+@media only screen and (max-width: 600px) and (min-width: 300px)  {
+    .container{
+        margin: 0px;
+        padding: 0px 23px;
+    }
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    position:sticky;
+    top: 0px;
+    z-index: 10;
+    padding: 16px;
+    border-bottom: 0.5px solid rgba(0,0,0,0.4);
+}
+a{
+    font-size: larger;
+    font-weight: 500;
+}
+
+.navbar-brand{
+    font-family: 'Creepster', cursive;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100px 100px 360px 50px!important;
+    padding: 5px 30px;
+    font-size: 24px;
+    color: white;
+    background: rgba(0,0,0,0.86);
+    cursor: pointer;
+}
+@media only screen  and (max-width: 812px) and (min-width: 300px) {    
+    a{
+        font-size: smaller;
+    }
+    .nav-link{
+        width: 92px;
+        text-align: center;
+    }
+}
